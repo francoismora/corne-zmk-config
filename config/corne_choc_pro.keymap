@@ -73,13 +73,13 @@
             // Left:  RET  DEL  BSPC  trans  trans
             //        LGUI LALT LCTL  LSHFT  trans
             //        Undo Cut  Copy  Paste  trans
-            // Right: {  }  "  |  trans
-            //        (  )  '  \  trans
-            //        [  ]  `  ~  trans
+            // Right: trans {  }  "  |
+            //        trans (  )  '  \
+            //        trans [  ]  `  ~
             bindings = <
-                &trans &trans &kp RET &kp DEL &kp BSPC &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans &trans
-                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans &trans
-                &trans &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans &trans
+                &trans &trans &kp RET &kp DEL &kp BSPC &trans &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans
+                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans
+                &trans &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &trans &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans
                 &trans &trans &trans &kp RET &kp BSPC &kp DEL
             >;
         };
@@ -87,13 +87,13 @@
         navigation_layer {
             display-name = "Navigation";
             // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
-            // Right: PSCRN  SLCK  PAUSE  INS    trans
-            //        LEFT   DOWN  UP     RIGHT  trans
-            //        HOME   PG_DN PG_UP  END    trans
+            // Right: trans PSCRN  SLCK  PAUSE  INS
+            //        trans LEFT   DOWN  UP     RIGHT
+            //        trans HOME   PG_DN PG_UP  END
             bindings = <
-                &trans &trans &trans &trans &trans &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &kp INS &trans &trans
-                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-                &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &kp INS &trans
+                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
+                &trans &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans
                 &trans &trans &trans &kp RET &kp BSPC &kp DEL
             >;
         };
