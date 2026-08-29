@@ -57,11 +57,15 @@
         mouse_layer {
             display-name = "Mouse";
             // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
+            // Right: trans  trans  trans  trans  trans
+            //        trans  M_LFT  M_DN   M_UP   M_RT
+            //        trans  W_LFT  W_DN   W_UP   W_RT
+            // Thumb: L_CLK  M_CLK  R_CLK
             bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &kp RET &kp BSPC &kp DEL
+                &trans &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans &trans
+                &trans &trans &trans &mkp LCLK &mkp MCLK &mkp RCLK
             >;
         };
 
