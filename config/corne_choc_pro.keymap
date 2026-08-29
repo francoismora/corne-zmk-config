@@ -54,13 +54,16 @@
 
         right_punc_layer {
             display-name = "Right Punctuation";
-            // Left:  +  *  _  trans  trans
-            //        =  $  %  ^      trans
-            //        -  !  @  #      trans
+            // Left:  trans  trans  trans  trans  trans
+            //        trans  trans  trans  trans  trans
+            //        trans  trans  trans  trans  trans
+            // Right: {  }  "  |  trans
+            //        (  )  '  \  trans
+            //        [  ]  `  ~  trans
             bindings = <
-                &kp PLUS &kp ASTRK &kp UNDER &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &kp EQUAL &kp DLLR &kp PRCNT &kp CARET &trans &trans &trans &trans &trans &trans &trans &trans
-                &kp MINUS &kp EXCL &kp AT &kp HASH &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans &trans &trans
+                &trans &trans &trans &trans &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans &trans &trans
+                &trans &trans &trans &trans &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
         };
@@ -87,10 +90,13 @@
 
         left_punc_layer {
             display-name = "Left Punctuation";
+            // Left:  +  *  _  trans  trans
+            //        =  $  %  ^      trans
+            //        -  !  @  #      trans
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp PLUS &kp ASTRK &kp UNDER &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp EQUAL &kp DLLR &kp PRCNT &kp CARET &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp MINUS &kp EXCL &kp AT &kp HASH &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
         };
