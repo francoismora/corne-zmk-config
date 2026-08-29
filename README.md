@@ -4,6 +4,9 @@ ZMK firmware configuration for the **Keebart Corne Choc Pro** (nRF52840, 36-key
 split). Slimmed down from [Keebart/zmk-config](https://github.com/Keebart/zmk-config)
 to contain only this keyboard.
 
+**New to this repo?** Read the [User Guide](GUIDE.md) — it covers configuring
+layouts, building, flashing, the settings-reset firmware, and troubleshooting.
+
 ## What's here
 
 ```
