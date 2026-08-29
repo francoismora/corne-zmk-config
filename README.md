@@ -15,6 +15,7 @@ corne-zmk-config/
 ├── boards/
 │   ├── arm/corne_choc_pro/    # board definition (pinout, matrix, defconfigs)
 │   └── shields/nice_view_disp/# Keebart's custom nice!view display shield
+├── zephyr/module.yml         # makes Zephyr find boards/ (for cloud builds)
 ├── build.yaml                # GitHub Actions build matrix
 ├── build.sh                  # local build script
 └── .github/workflows/build.yml
@@ -49,8 +50,13 @@ Subsequent runs skip that. Output in the repo root:
 
 ### How the board is found
 
-No symlink hack. `build.sh` passes `-DBOARD_ROOT=<repo>` to `west build`, so
-Zephyr finds `<repo>/boards/` directly. This is the documented Zephyr mechanism.
+No symlink hack. Two mechanisms, one per build path:
+
+- **Local** (`build.sh`): passes `-DBOARD_ROOT=<repo>` to `west build`, so
+  Zephyr finds `<repo>/boards/` directly.
+- **Cloud** (GitHub Actions): `zephyr/module.yml` (with `board_root: .`) makes
+  the ZMK reusable workflow load the repo as a Zephyr extra module, so Zephyr
+  finds `boards/` the same way.
 
 ## Build in the cloud (GitHub Actions)
 
