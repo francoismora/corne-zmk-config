@@ -143,7 +143,9 @@ Keep both pins in sync so local and cloud builds use the same ZMK version.
 Each half has position-specific firmware. Never swap them.
 
 1. Double-press the reset button on one half with a SIM tool. It mounts as a
-   USB drive named `KEEBART` (left) or `KEEBART1` (right).
+   USB drive named `KEEBART` (first half connected) or `KEEBART1` (second).
+   The drive label does **not** indicate left or right — see
+   [Identifying which drive is which](#identifying-which-drive-is-which) below.
 2. Copy the matching `.uf2` with `cp` (drag-and-drop is unreliable):
    ```bash
    cp corne_choc_pro_left.uf2 /run/media/francois/KEEBART/
@@ -151,6 +153,19 @@ Each half has position-specific firmware. Never swap them.
 3. Wait for the drive to auto-eject, then repeat for the other half.
 4. Re-pair the halves: single-press reset on both within 2-3 seconds of each
    other. This triggers BLE pairing between central and peripheral.
+
+### Identifying which drive is which
+
+When both halves are in bootloader mode, two drives mount (`KEEBART` and
+`KEEBART1`), but the labels don't tell you which is left or right. The order
+depends on which half entered bootloader mode first.
+
+The reliable way to identify them: put only **one** half in bootloader mode at a
+time. Flash it, then repeat for the other half. This avoids any ambiguity.
+
+If both are already mounted and you need to tell them apart, unmount one drive,
+physically identify the remaining half (left or right), and flash it. Then
+re-mount the other.
 
 ### Verifying the flash
 
@@ -161,19 +176,9 @@ ls /dev/input/by-id/ | grep ZMK
 
 ### Diagnosing a swapped flash
 
-If a half appears bricked (no LED, no input), the firmware may be swapped. The
-encoder labels in the firmware reveal which half it belongs to:
-
-```bash
-strings corne_choc_pro_left.uf2 | grep encoder
-# should show: encoder_left_ex1, encoder_left_ex2
-
-strings corne_choc_pro_right.uf2 | grep encoder
-# should show: encoder_right_ex1, encoder_right_ex2
-```
-
-If you see `encoder_right` in the left firmware or vice versa, re-flash with
-the correct file.
+If a half appears bricked (no LED, no input), the firmware may be swapped —
+left firmware on the right half or vice versa. Re-flash both halves, taking
+care to match the file to the physical half (one at a time, as described above).
 
 ---
 
