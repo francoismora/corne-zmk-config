@@ -83,7 +83,7 @@
             // Left:  (  7  8  9  )
             //        +  4  5  6  *
             //        -  1  2  3  /
-            // Thumb: .  0  =
+            // Thumb:    .  0  =
             bindings = <
                 &kp LPAR &kp N7 &kp N8 &kp N9 &kp RPAR &trans &trans &trans &trans &trans &trans &trans
                 &kp PLUS &kp N4 &kp N5 &kp N6 &kp ASTRK &trans &trans &trans &trans &trans &trans &trans
@@ -107,10 +107,13 @@
 
         function_layer {
             display-name = "Function";
+            // Left:  F12  F7  F8  F9  trans
+            //        F11  F4  F5  F6  trans
+            //        F10  F1  F2  F3  trans
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp F12 &kp F7 &kp F8 &kp F9 &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp F11 &kp F4 &kp F5 &kp F6 &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp F10 &kp F1 &kp F2 &kp F3 &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
         };
