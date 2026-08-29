@@ -92,7 +92,7 @@
             // |     |     |     |     |     |               |     | HOME | PG_DN | PG_UP | END |
             //                    |     |     |     |       | RET | BSPC | DEL |
             bindings = <
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp INS
+                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp INSERT
                 &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          &trans          &trans          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT
                 &trans          &trans          &trans          &trans          &trans          &trans          &kp HOME        &kp PG_DN       &kp PG_UP       &kp END
                 &trans          &trans          &trans          &kp RET         &kp BSPC        &kp DEL
