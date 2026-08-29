@@ -1,0 +1,10 @@
+# Build output
+build/
+# West workspace (fetched dependencies)
+zmk/
+zephyr/
+modules/
+.venv/
+.west/
+*.uf2
+*.log

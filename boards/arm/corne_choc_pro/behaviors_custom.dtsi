@@ -1,0 +1,110 @@
+/*
+ * Custom behaviors for Corne Choc Pro ZSA-style layout
+ */
+
+// Home row mod-taps
+mt: mod_taps {
+    gui-a {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_LGUI>;
+        tap = <&kp A>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    alt-s {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_LALT>;
+        tap = <&kp S>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    ctrl-d {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_LCTL>;
+        tap = <&kp D>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    shift-f {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_LSFT>;
+        tap = <&kp F>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    rshift-j {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_RSFT>;
+        tap = <&kp J>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    rctrl-k {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_RCTL>;
+        tap = <&kp K>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    ralt-l {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_RALT>;
+        tap = <&kp L>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+    rgui-scln {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        mod = <MOD_RGUI>;
+        tap = <&kp SEMI>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+    };
+};
+
+// Layer-taps for thumb cluster
+lt: layer_taps {
+    lt_lower_space {
+        compatible = "zmk,behavior-layer-tap";
+        #binding-cells = <0>;
+        layer = <1>;
+        tap = <&kp SPACE>;
+        tapping-term-ms = <200>;
+    };
+    lt_navigation_tab {
+        compatible = "zmk,behavior-layer-tap";
+        #binding-cells = <0>;
+        layer = <5>;
+        tap = <&kp TAB>;
+        tapping-term-ms = <200>;
+    };
+    lt_raise_enter {
+        compatible = "zmk,behavior-layer-tap";
+        #binding-cells = <0>;
+        layer = <2>;
+        tap = <&kp RET>;
+        tapping-term-ms = <200>;
+    };
+    lt_numpad_bspc {
+        compatible = "zmk,behavior-layer-tap";
+        #binding-cells = <0>;
+        layer = <6>;
+        tap = <&kp BSPC>;
+        tapping-term-ms = <200>;
+    };
+    lt_functional_del {
+        compatible = "zmk,behavior-layer-tap";
+        #binding-cells = <0>;
+        layer = <7>;
+        tap = <&kp DEL>;
+        tapping-term-ms = <200>;
+    };
+};
