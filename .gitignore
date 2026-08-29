@@ -1,9 +1,7 @@
 # Build output
 build/
-# West workspace (fetched dependencies)
+# West workspace (fetched dependencies — not committed)
 zmk/
-zephyr/*
-!zephyr/module.yml
 modules/
 .venv/
 .west/
