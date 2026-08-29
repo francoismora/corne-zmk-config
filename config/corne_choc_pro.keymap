@@ -54,10 +54,13 @@
 
         right_punc_layer {
             display-name = "Right Punctuation";
+            // Left:  +  *  _  trans  trans
+            //        =  $  %  ^      trans
+            //        -  !  @  #      trans
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp PLUS &kp ASTRK &kp UNDER &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp EQUAL &kp DLLR &kp PRCNT &kp CARET &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp MINUS &kp EXCL &kp AT &kp HASH &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
         };
