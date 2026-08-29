@@ -44,9 +44,10 @@
             // Row 1: CAPS A  S  D  F  G  .  H  J  K  L  ;  NLCK
             // Row 2: CAPS Z  X  C  V  B  .  N  M  ,  .  /  NLCK
             // Row 3:        ESC SPC TAB  ENT BSPC DEL
+            // Row 1: CAPS GUI/A ALT/S CTL/D SFT/F G  .  H  SFT/J CTL/K ALT/L GUI/;  NLCK
             bindings = <
                 &kp CAPSLOCK &kp Q &kp W &kp E &kp R &kp T &trans &kp Y &kp U &kp I &kp O &kp P &kp KP_NUMLOCK
-                &kp CAPSLOCK &kp A &kp S &kp D &kp F &kp G &trans &kp H &kp J &kp K &kp L &kp SEMI &kp KP_NUMLOCK
+                &kp CAPSLOCK &mt MOD_LGUI A &mt MOD_LALT S &mt MOD_LCTL D &mt MOD_LSFT F &kp G &trans &kp H &mt MOD_RSFT J &mt MOD_RCTL K &mt MOD_RALT L &mt MOD_RGUI SEMI &kp KP_NUMLOCK
                 &kp CAPSLOCK &kp Z &kp X &kp C &kp V &kp B &trans &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp KP_NUMLOCK
                 &lt MOUSE ESC &lt RIGHT_PUNC SPACE &lt NAVIGATION TAB &lt NUMPAD RET &lt LEFT_PUNC BSPC &lt FUNCTION DEL
             >;
