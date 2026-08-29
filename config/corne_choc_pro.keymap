@@ -80,11 +80,15 @@
 
         numpad_layer {
             display-name = "NumPad";
+            // Left:  (  7  8  9  )
+            //        +  4  5  6  *
+            //        -  1  2  3  /
+            // Thumb: .  0  =
             bindings = <
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans
+                &kp LPAR &kp N7 &kp N8 &kp N9 &kp RPAR &trans &trans &trans &trans &trans &trans &trans
+                &kp PLUS &kp N4 &kp N5 &kp N6 &kp ASTRK &trans &trans &trans &trans &trans &trans &trans
+                &kp MINUS &kp N1 &kp N2 &kp N3 &kp FSLH &trans &trans &trans &trans &trans &trans &trans
+                &kp DOT &kp N0 &kp EQUAL &trans &trans &trans
             >;
         };
 
