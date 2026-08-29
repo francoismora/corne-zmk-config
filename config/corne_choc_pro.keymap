@@ -54,16 +54,16 @@
 
         right_punc_layer {
             display-name = "Right Punctuation";
-            // Left:  trans  trans  trans  trans  trans
-            //        trans  trans  trans  trans  trans
-            //        trans  trans  trans  trans  trans
+            // Left:  trans  RET    DEL    BSPC  trans
+            //        trans  trans   trans  trans  trans
+            //        Undo   Cut    Copy   Paste  trans
             // Right: {  }  "  |  trans
             //        (  )  '  \  trans
             //        [  ]  `  ~  trans
             bindings = <
-                &trans &trans &trans &trans &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans &trans &trans
+                &trans &kp RET &kp DEL &kp BSPC &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans &trans &trans
                 &trans &trans &trans &trans &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans &trans &trans
-                &trans &trans &trans &trans &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans &trans &trans
+                &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
         };
