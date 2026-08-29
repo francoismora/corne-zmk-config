@@ -28,6 +28,12 @@ if [ ! -d .west ]; then
   pip install -r zmk/app/scripts/requirements.txt
 else
   source .venv/bin/activate
+  # Ensure dependencies are present (handles deleted zephyr/ etc.)
+  if [ ! -f zephyr/scripts/west-commands.yml ]; then
+    echo ">> Restoring west workspace..."
+    west update
+    west zephyr-export
+  fi
 fi
 
 # shellcheck disable=SC1091
@@ -42,7 +48,9 @@ build() {
   echo ">> Building $out  (board=$board shield=$shield)"
   rm -rf build
   # shellcheck disable=SC2086
-  west build -b "$board" -s "$APP" -- -DSHIELD="$shield" -DBOARD_ROOT="$BOARD_ROOT" $extra
+  # -DZMK_CONFIG points at config/ so the keymap/conf there override the
+  #   board's defaults — same resolution the cloud build uses.
+  west build -b "$board" -s "$APP" -- -DSHIELD="$shield" -DBOARD_ROOT="$BOARD_ROOT" -DZMK_CONFIG="$REPO/config" $extra
   cp build/zephyr/zmk.uf2 "$REPO/$out"
   echo "   -> $REPO/$out"
 }
