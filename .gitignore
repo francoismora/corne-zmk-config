@@ -2,7 +2,8 @@
 build/
 # West workspace (fetched dependencies)
 zmk/
-zephyr/
+zephyr/*
+!zephyr/module.yml
 modules/
 .venv/
 .west/
