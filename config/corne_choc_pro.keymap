@@ -44,9 +44,10 @@
 
         mouse_layer {
             display-name = "Mouse";
+            // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
             bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
@@ -55,14 +56,14 @@
         right_punc_layer {
             display-name = "Right Punctuation";
             // Left:  trans  RET    DEL    BSPC  trans
-            //        trans  trans   trans  trans  trans
+            //        LGUI   LALT   LCTL   LSHFT trans
             //        Undo   Cut    Copy   Paste  trans
             // Right: {  }  "  |  trans
             //        (  )  '  \  trans
             //        [  ]  `  ~  trans
             bindings = <
                 &trans &kp RET &kp DEL &kp BSPC &trans &kp LBRC &kp RBRC &kp DQT &kp PIPE &trans &trans &trans
-                &trans &trans &trans &trans &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans &trans &trans
+                &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &kp LPAR &kp RPAR &kp SQT &kp BSLH &trans &trans &trans
                 &kp K_UNDO &kp K_CUT &kp K_COPY &kp K_PASTE &trans &kp LBKT &kp RBKT &kp GRAVE &kp TILDE &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
@@ -70,12 +71,13 @@
 
         navigation_layer {
             display-name = "Navigation";
+            // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
             // Right: trans  PSCRN  SLCK   PAUSE  INS
             //         trans  LEFT   DOWN   UP     RIGHT
             //         trans  HOME   PG_DN  PG_UP  END
             bindings = <
                 &trans &trans &trans &trans &trans &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &kp INS &trans &trans
-                &trans &trans &trans &trans &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+                &kp LGUI &kp LALT &kp LCTL &kp LSHFT &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
                 &trans &trans &trans &trans &trans &trans &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
@@ -87,9 +89,10 @@
             //        +  4  5  6  *
             //        -  1  2  3  /
             // Thumb:    .  0  =
+            // Right home row mods: H=trans J=RSHFT K=RCTL L=RALT ;=RGUI
             bindings = <
                 &kp LPAR &kp N7 &kp N8 &kp N9 &kp RPAR &trans &trans &trans &trans &trans &trans &trans
-                &kp PLUS &kp N4 &kp N5 &kp N6 &kp ASTRK &trans &trans &trans &trans &trans &trans &trans
+                &kp PLUS &kp N4 &kp N5 &kp N6 &kp ASTRK &trans &kp RSHFT &kp RCTL &kp RALT &kp RGUI &trans &trans
                 &kp MINUS &kp N1 &kp N2 &kp N3 &kp FSLH &trans &trans &trans &trans &trans &trans &trans
                 &kp DOT &kp N0 &kp EQUAL &trans &trans &trans
             >;
@@ -100,9 +103,10 @@
             // Left:  +  &  *  _  trans
             //        =  $  %  ^  trans
             //        -  !  @  #  trans
+            // Right home row mods: H=trans J=RSHFT K=RCTL L=RALT ;=RGUI
             bindings = <
                 &kp PLUS &kp AMPS &kp ASTRK &kp UNDER &trans &trans &trans &trans &trans &trans &trans &trans
-                &kp EQUAL &kp DLLR &kp PRCNT &kp CARET &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp EQUAL &kp DLLR &kp PRCNT &kp CARET &trans &trans &kp RSHFT &kp RCTL &kp RALT &kp RGUI &trans &trans
                 &kp MINUS &kp EXCL &kp AT &kp HASH &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
@@ -113,9 +117,10 @@
             // Left:  F12  F7  F8  F9  trans
             //        F11  F4  F5  F6  trans
             //        F10  F1  F2  F3  trans
+            // Right home row mods: H=trans J=RSHFT K=RCTL L=RALT ;=RGUI
             bindings = <
                 &kp F12 &kp F7 &kp F8 &kp F9 &trans &trans &trans &trans &trans &trans &trans &trans
-                &kp F11 &kp F4 &kp F5 &kp F6 &trans &trans &trans &trans &trans &trans &trans &trans
+                &kp F11 &kp F4 &kp F5 &kp F6 &trans &trans &kp RSHFT &kp RCTL &kp RALT &kp RGUI &trans &trans
                 &kp F10 &kp F1 &kp F2 &kp F3 &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans
             >;
