@@ -39,11 +39,12 @@
 
         default_layer {
             display-name = "QWERTY";
-            //        L1 L2 L3 L4 L5 R1 R2 R3 R4 R5
-            // Row 0: Q  W  E  R  T  Y  U  I  O  P
-            // Row 1: GUI/A ALT/S CTL/D SFT/F G  H  SFT/J CTL/K ALT/L GUI/;
-            // Row 2: Z  X  C  V  B  N  M  ,  .  /
-            // Row 3:    ESC SPC TAB  ENT BSPC DEL
+            // --------------------------------------------------------------------------------
+            // |  Q  |  W  |  E  |  R  |  T  |               |  Y  |  U  |  I  |  O  |  P  |
+            // | GUI/A | ALT/S | CTL/D | SFT/F |  G  |       |  H  | SFT/J | CTL/K | ALT/L | GUI/; |
+            // |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M  |  ,  |  .  |  /  |
+            //                    | ESC | SPC | TAB |       | ENT | BSPC | DEL |
+            //                    |MOUSE|R_PUNC| NAV |     |NUMPAD|L_PUNC| FUNC|
             bindings = <
                 &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
                 &mt LGUI A      &mt LALT S      &mt LCTL D      &mt LSHFT F     &kp G           &kp H           &mt RSHFT J     &mt RCTL K      &mt RALT L      &mt RGUI SEMI
@@ -55,11 +56,11 @@
 
         mouse_layer {
             display-name = "Mouse";
-            // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
-            // Right: BT0   BT1   BT2   BT3   BT4
-            //        BTCLR M_LFT M_DN  M_UP  M_RT
-            //        BTCLR W_LFT W_DN  W_UP  W_RT
-            // Thumb: L_CLK  M_CLK  R_CLK
+            // --------------------------------------------------------------------------------
+            // |     |     |     |     |     |               | BT0 | BT1 | BT2 | BT3 | BT4 |
+            // | LGUI | LALT | LCTL | LSHFT |     |           |BTCLR| M_LFT | M_DN | M_UP | M_RT |
+            // |     |     |     |     |     |               |BTCLR| W_LFT | W_DN | W_UP | W_RT |
+            //                    |     |     |     |       |L_CLK | M_CLK | R_CLK |
             bindings = <
                 &trans          &trans          &trans          &trans          &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
                 &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          &bt BT_CLR      &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
@@ -70,12 +71,11 @@
 
         right_punc_layer {
             display-name = "Right Punctuation";
-            // Left:  RET  DEL  BSPC  trans  trans
-            //        LGUI LALT LCTL  LSHFT  trans
-            //        Undo Cut  Copy  Paste  trans
-            // Right: trans {  }  "  |
-            //        trans (  )  '  \
-            //        trans [  ]  `  ~
+            // --------------------------------------------------------------------------------
+            // |     | RET | DEL | BSPC |     |               |     |  {  |  }  |  "  |  |  |
+            // | LGUI | LALT | LCTL | LSHFT |     |           |     |  (  |  )  |  '  |  \  |
+            // | Undo | Cut | Copy | Paste |     |             |     |  [  |  ]  |  `  |  ~  |
+            //                    |     |     |     |         |     | BSPC | DEL |
             bindings = <
                 &trans          &kp RET         &kp DEL         &kp BSPC        &trans          &trans          &kp LBRC        &kp RBRC        &kp DQT         &kp PIPE
                 &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          &trans          &kp LPAR        &kp RPAR        &kp SQT         &kp BSLH
@@ -86,10 +86,11 @@
 
         navigation_layer {
             display-name = "Navigation";
-            // Left home row mods: A=LGUI S=LALT D=LCTL F=LSHFT
-            // Right: trans PSCRN  SLCK  PAUSE  INS
-            //        trans LEFT   DOWN  UP     RIGHT
-            //        trans HOME   PG_DN PG_UP  END
+            // --------------------------------------------------------------------------------
+            // |     |     |     |     |     |               |     | PSCRN | SLCK | PAUSE | INS |
+            // | LGUI | LALT | LCTL | LSHFT |     |           |     | LEFT | DOWN | UP | RIGHT |
+            // |     |     |     |     |     |               |     | HOME | PG_DN | PG_UP | END |
+            //                    |     |     |     |       | RET | BSPC | DEL |
             bindings = <
                 &trans          &trans          &trans          &trans          &trans          &trans          &kp PSCRN       &kp SLCK        &kp PAUSE_BREAK &kp INS
                 &kp LGUI        &kp LALT        &kp LCTL        &kp LSHFT       &trans          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT
@@ -100,11 +101,11 @@
 
         numpad_layer {
             display-name = "NumPad";
-            // Left:  (  7  8  9  )
-            //        +  4  5  6  *
-            //        -  1  2  3  /
-            // Thumb: .  0  =
-            // Right home row mods: J=RSHFT K=RCTL L=RALT ;=RGUI
+            // --------------------------------------------------------------------------------
+            // |  (  |  7  |  8  |  9  |  )  |               |     |     |     |     |     |
+            // |  +  |  4  |  5  |  6  |  *  |               |     | RSHFT | RCTL | RALT | RGUI |
+            // |  -  |  1  |  2  |  3  |  /  |               |     |     |     |     |     |
+            //                    |  .  |  0  |  =  |       |     |     |     |
             bindings = <
                 &kp LPAR        &kp N7          &kp N8          &kp N9          &kp RPAR        &trans          &trans          &trans          &trans          &trans
                 &kp PLUS        &kp N4          &kp N5          &kp N6          &kp ASTRK       &trans          &kp RSHFT       &kp RCTL        &kp RALT        &kp RGUI
@@ -115,10 +116,11 @@
 
         left_punc_layer {
             display-name = "Left Punctuation";
-            // Left:  +  &  *  _  trans
-            //        =  $  %  ^  trans
-            //        -  !  @  #  trans
-            // Right home row mods: J=RSHFT K=RCTL L=RALT ;=RGUI
+            // --------------------------------------------------------------------------------
+            // |  +  |  &  |  *  |  _  |     |               |     |     |     |     |     |
+            // |  =  |  $  |  %  |  ^  |     |               |     | RSHFT | RCTL | RALT | RGUI |
+            // |  -  |  !  |  @  |  #  |     |               |     |     |     |     |     |
+            //                    | ESC | SPC | TAB |       |     |     |     |
             bindings = <
                 &kp PLUS        &kp AMPS        &kp ASTRK       &kp UNDER       &trans          &trans          &trans          &trans          &trans          &trans
                 &kp EQUAL       &kp DLLR        &kp PRCNT       &kp CARET       &trans          &trans          &kp RSHFT       &kp RCTL        &kp RALT        &kp RGUI
@@ -129,10 +131,11 @@
 
         function_layer {
             display-name = "Function";
-            // Left:  F12  F7  F8  F9  trans
-            //        F11  F4  F5  F6  trans
-            //        F10  F1  F2  F3  trans
-            // Right home row mods: J=RSHFT K=RCTL L=RALT ;=RGUI
+            // --------------------------------------------------------------------------------
+            // | F12 | F7  | F8  | F9  |     |               |     |     |     |     |     |
+            // | F11 | F4  | F5  | F6  |     |               |     | RSHFT | RCTL | RALT | RGUI |
+            // | F10 | F1  | F2  | F3  |     |               |     |     |     |     |     |
+            //                    | ESC | SPC | TAB |       |     |     |     |
             bindings = <
                 &kp F12         &kp F7          &kp F8          &kp F9          &trans          &trans          &trans          &trans          &trans          &trans
                 &kp F11         &kp F4          &kp F5          &kp F6          &trans          &trans          &kp RSHFT       &kp RCTL        &kp RALT        &kp RGUI
